@@ -350,7 +350,7 @@ setInterval('get()', 5000);
     <div class="open enter-btn">
   
     	{if $news[customer].button_link_me eq 'hotel'}
-			    <a href="{{ env('APP_URL') }}/client.php" target="38bad4312a9f27ce591f69f49725def36283fe99" onclick="HabboClient.openOrFocus(this); return false;">{#Enterhotel#}<i></i></a>
+			    <a href="{{ env('APP_URL') }}/client.php" target="38bad4312a9f27ce591f69f49725def36283fe99" onclick="HabboClient.openOrFocus(this); return false;">@lang('enterhotel')<i></i></a>
 			    {elseif  empty($news[customer].button_link_me)}
 			    	<a href="events.php?id={$news[customer].id}">{$news[customer].button_text_me}<i></i></a>
 			    {else}
