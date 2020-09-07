@@ -168,16 +168,16 @@ body { behavior: url(/js/csshover.htc); }
 <ul id="navi">
         <li class="metab {if $groups eq 'index'}selected{/if}">
 		<a   href="{{ env('APP_URL') }}/me.php">
-			{{ $user->username }}( <i style="background-image: url({{ env('APP_URL') }}/web-gallery/images/id_icon.png)"> )</i>
+			{{ $user->username }}( {{ $user->id }} <i style="background-image: url({{ env('APP_URL') }}/web-gallery/images/id_icon.png)"> )</i>
 		</a>
 <span></span>
 </li>
 		<li class="{if $groups eq 'community'}selected{/if}">
-			<a href="{{ env('APP_URL') }}/community.php">{#Community#}</a>
+			<a href="{{ env('APP_URL') }}/community.php">@lang('community')</a>
 			<span></span>
 		</li>
 		<li class="{if $groups eq 'shop'}selected{/if}">
-			<a href="{{ env('APP_URL') }}/shop.php">{#Shop#} ({$user->jetons} {$config->moneyname})</a>
+			<a href="{{ env('APP_URL') }}/shop.php">@lang('shop') ({{$user->jetons}} {{$config->moneyname}})</a>
 			<span></span>
 		</li>
 		<!--
@@ -186,10 +186,12 @@ body { behavior: url(/js/csshover.htc); }
 			<span></span>
 		</li>
 		-->
-		{if $user->rank eq 6 or $user->rank eq 7 or $user->rank eq 8 }<li id="tab-register-now" class="">
-			<a href="{{ env('APP_URL') }}/admin">Housekeeping</a>
-			<span></span>{/if}
+		@if ($user->rank >= 6)
+			<li id="tab-register-now" class="">
+			<a href="{{ env('APP_URL') }}/admin">@lang('housekeeping')</a>
+			<span></span>
 		</li>
+		@endif
 </ul>
 
         <div id="habbos-online"><div class="rounded"><span style="color:#000;">{if isset($config->users_online)}{$config->users_online}{/if}<br/>{#online#}</span></div></div>
@@ -198,22 +200,22 @@ body { behavior: url(/js/csshover.htc); }
 </div>
 <div id="content-container">
 <div id="navi2-container" class="pngbg">
-{if $groups eq 'index'}
+@if(Route::current()->getName() === 'me')
     <div id="navi2" class="pngbg clearfix">
 	<ul>
 			<li class="{if $url eq 'me.php'}selected{/if}">
-				<a href="{{ env('APP_URL') }}/me.php">{#Home#}</a>
+				<a href="{{ env('APP_URL') }}/me.php">@lang('home')</a>
 			</li>
     		<li class="{if $url eq 'home.php'}selected{/if}">
-				<a href="{{ env('APP_URL') }}/home.php?username={{ $user->username }}">{#MyHomePage#}</a>
+				<a href="{{ env('APP_URL') }}/home.php?username={{ $user->username }}">@lang('myhomepage')</a>
     		</li>
     		<li class="{if $url eq 'profile.php'}selected{/if} last">
-				<a href="{{ env('APP_URL') }}/profile.php?page=index">{#MyPreferences#}</a>
+				<a href="{{ env('APP_URL') }}/profile.php?page=index">@lang('mypreferences')</a>
     		</li>
 	</ul>
     </div>
- {/if}
- {if $groups eq 'community'}
+	@endif
+	@if(Route::current()->getName() === 'community')
     <div id="navi2" class="pngbg clearfix">
 	<ul>
 			<li class="{if $url eq 'community.php'}selected{/if}">
@@ -227,8 +229,8 @@ body { behavior: url(/js/csshover.htc); }
     		</li>
 	</ul>
     </div>
- {/if}
- {if $groups eq 'shop'}
+	@endif
+	@if(Route::current()->getName() === 'shop')
     <div id="navi2" class="pngbg clearfix">
 	<ul>
 			<li class="{if $url eq 'shop.php'}selected{/if}">
@@ -252,8 +254,8 @@ body { behavior: url(/js/csshover.htc); }
     		
 	</ul>
     </div>
- {/if}
-  {if $groups eq 'respect'}
+ @endif
+<!--
     <div id="navi2" class="pngbg clearfix" style="display:none">
 	<ul>
 			<li class="{if $url eq 's_attitude.php'}selected{/if}">
@@ -270,7 +272,7 @@ body { behavior: url(/js/csshover.htc); }
 			</li>
 	</ul>
     </div>
- {/if}
+ -->
 </div>
 <!--Ne pas supprimer se input -->
 <script>

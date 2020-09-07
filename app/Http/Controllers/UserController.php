@@ -23,6 +23,7 @@ class UserController extends Controller
 			$user->last_online = $k->last_online;
 			$user->look = $k->look;
 			$user->rank = $k->rank;
+			$user->jetons = $k->jetons;
 		}
 		foreach($query as $cnf){
 			$user->username = $cnf->username;
