@@ -193,8 +193,7 @@ body { behavior: url(/js/csshover.htc); }
 		</li>
 		@endif
 </ul>
-
-        <div id="habbos-online"><div class="rounded"><span style="color:#000;">{if isset($config->users_online)}{$config->users_online}{/if}<br/>{#online#}</span></div></div>
+        <div id="habbos-online"><div class="rounded"><span style="color:#000;">{{ $config->users_online }}<br/>@lang('online')</span></div></div>
         
 	</div>
 </div>
@@ -370,8 +369,8 @@ setInterval('get()', 5000);
             <div class="title">{$news[customer].title}</div>
             <div class="body">{$news[customer].short}</div>
         </div>
-        <a href="http://www.facebook.com/{$config->facebook}" target="_blank" class="facebook-link" onclick="recordOutboundLink('Promo','SnowStorm Facebook Button');"></a>
-        <a href="http://twitter.com/{$config->twitter}" target="_blank" class="twitter-link" onclick="recordOutboundLink('Promo','SnowStorm Twitter Button');"></a>
+        <a href="http://www.facebook.com/{{$config->facebook}}" target="_blank" class="facebook-link" onclick="recordOutboundLink('Promo','SnowStorm Facebook Button');"></a>
+        <a href="http://twitter.com/{{$config->twitter}}" target="_blank" class="twitter-link" onclick="recordOutboundLink('Promo','SnowStorm Twitter Button');"></a>
           {if $news[customer].button_link_display eq 1}
 <div class="enter-hotel-btn">
     <div class="open enter-btn">
@@ -513,7 +512,7 @@ new TWTR.Widget({
     live: false,
     behavior: 'all'
   }
-}).render().setUser('{$config->twitter}').start();
+}).render().setUser('{{ $config->twitter }}').start();
 </script>
 <div style="float:left;">
 {{$config->ads300x250}}
