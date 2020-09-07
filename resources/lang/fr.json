@@ -1,0 +1,28 @@
+{
+
+	"entrer": "Entrer !",
+	"username": "Pseudo",
+	"password": "Mot de passe",
+	"password_forgotten": "Mot de passe oublié ?",
+	"keep_session_alive": "Garder ma session active",
+	"login_with_fb": "Connexion avec Facebook",
+	"users_online_index": "à l'intérieur",
+	"with_idx": "avec",
+	"register_you": "Inscris-toi",
+	"it_is_free": "c'est gratuit!",
+	"new_user": "Nouveaux utilisateurs,",
+	"clic_here": "cliquez ici",
+	"warning": "ATTENTION:",
+	"warning_message": "N'utilise pas les mêmes identifiants que ton compte HABBO!",
+	"error_login_password": "Indique un mot de passe.",
+	"error_login_pseudo": "Indique un pseudo.",
+	"error_login_wrong": "Pseudo ou Mot de passe incorrect.",
+	"error_login_ban": "Vous êtes banni jusqu'au %expire% pour la raison : %reason%",
+	"error_login_maintenance": "Accès non autorisé.",
+	
+	"name": "Nom",
+	"motto": "Mission",
+	"lastlogin": "Dernière connexion",
+	"enterhotel": "Entrer dans l'hôtel",
+	"enterin": "Entrer dans"
+}
