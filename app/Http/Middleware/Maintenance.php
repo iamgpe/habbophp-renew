@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 use App\Http\Controllers\ConfigController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
 use Closure;
@@ -21,7 +20,7 @@ class Maintenance
 		$config = ConfigController::getConfig();
 		if($config->checkMaintenance){
 			if(Auth::check()){
-				$user = UserController::getUser();
+				$user = auth()->user();
 				if($user->rank < 3){
 			return redirect()->route('maintenance');
 			}
