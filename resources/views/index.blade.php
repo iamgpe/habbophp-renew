@@ -154,7 +154,8 @@ HabboView.add( function() {
      <div id="loginerrorfieldwrapper">
    
            		 <div id="loginerrorfield">
-                	<div>@lang('error_login_wrong')</div>
+                    <div>@lang('error_login_wrong')</div>
+                    
             	</div>
         	</div>
 	@php } @endphp
