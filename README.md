@@ -13,5 +13,5 @@ Actuellement, j'aimerai (notaryz) remercier [Maxime](https://github.com/maximehe
 pour leur aide ! :)
 
 ## Contact
-Pour me contacter : (Habbo-Dev)[https://habbo-dev.fr/membre/6595-notaryz/]
+Pour me contacter : [Habbo-Dev](https://habbo-dev.fr/membre/6595-notaryz/)
                     Discord : nttZx#0013
