@@ -317,7 +317,7 @@ setInterval('get()', 5000);
     </div>
     <div id="last-logged-in-box" class="info-box">
         <div class="label">@lang('lastlogin'):</div>
-        <div class="content">{{ $user->last_online }}</div>
+        <div class="content">{{ date('d/m/Y H:i:s', $user->last_login) }}</div>
     </div>
 
 <div class="enter-hotel-btn">
