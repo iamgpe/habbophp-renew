@@ -306,6 +306,7 @@ setInterval('get()', 5000);
         </a>
     </div>
 
+	
     <div id="name-box" class="info-box">
         <div class="label">@lang('name'):</div>
         <div class="content">{{ $user->username }} {$vip}</div>
