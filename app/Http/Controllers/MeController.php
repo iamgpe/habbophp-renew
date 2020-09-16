@@ -11,6 +11,6 @@ class MeController extends Controller {
 	
 	public function show()
     {
-        return view('me', ['user' => auth()->user()]);
+        return view('me');
     }
 }
