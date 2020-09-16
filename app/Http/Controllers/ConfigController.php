@@ -38,11 +38,10 @@ class ConfigController extends Controller
 		public static function checkMaintenance() {
 			
 			$query = DB::table('habbophp_config')->where('name', 'maintenance')->first();
-			if($query->value == "true"){
-				return true;
-			} else {
+			if($query->value == "true")
+				return true; 
+			else
 				return false;
-			}
 			
 		}
 
