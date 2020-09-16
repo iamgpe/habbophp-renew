@@ -21,7 +21,7 @@ class ConfigController extends Controller
 		switch($config->emulateur){
 			
 			case "arcturus":
-			$qu2 = DB::table('users')->count('online');
+			$qu2 = DB::table('users')->where('online', '1')->count('online');
 			$config->users_online = $qu2;
 			break;
 			

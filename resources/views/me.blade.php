@@ -295,7 +295,6 @@ function get(){
 }
 setInterval('get()', 5000);
 </script>
-<input type="hidden" value="{if isset($token)}{$token}{/if}" id="token"/>
 <div id="container">
 
 	<div id="content" style="position: relative" class="clearfix">
