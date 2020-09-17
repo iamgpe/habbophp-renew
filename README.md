@@ -9,7 +9,7 @@ HabboPHP Renew est le successeur du fameux CMS HabboPHP qui a déclenché une r�
 Le backend du CMS est entièrement réalisé en Laravel 7, bientôt sur Laravel 8. Tout le front-end reste le même, mais si vous souhaitez tout le refaire avec des technologies plus performantes, n'hésitez pas à me contacter.
 
 ## Qui sont les contributeurs ?
-Actuellement, j'aimerai (notaryz) remercier [Maxime](https://github.com/maximehery), [Clayton](https://github.com/absolutezeroo), ainsi que [Pitt](https://github.com/Pi-Bouf)
+Actuellement, j'aimerai (notaryz) remercier [Maxime](https://github.com/maximehery), [Clayton](https://github.com/absolutezeroo), [Eklopsis](https://github.com/iamgpe), ainsi que [Pitt](https://github.com/Pi-Bouf)
 pour leur aide ! :)
 
 ## Contact
