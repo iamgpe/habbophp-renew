@@ -137,41 +137,7 @@ body { behavior: url(/js/csshover.htc); }
 <body id="view mode" class="impor body_classic_width">
 <div id="overlay"></div>
 <div id="updated" style="position:fixed;width:150px;text-align:center;left:50%;right:50%;margin-left:-75px;font-size:19px;padding:5px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;text-shadow:0 1px 0 #fff;background:#feffba;color:#333;display:none;z-index:9999999;">Mis &agrave; jour</div>
-<div id="header-container">
-	<div id="header" class="clearfix">
-		<h1><a href="{{ env('APP_URL') }}/me.php"></a></h1>
-<div id="subnavi"> 
-			<div id="subnavi-user"> 
-				<ul> 
-					<li id="myfriends"><a href="#"><span>Mes Amis</span></a><span class="r"></span></li> 
-					
-					<li id="myrooms"><a href="#"><span>Mes Apparts</span></a><span class="r"></span></li> 
-				</ul> 
-						</div> 
-			            <div id="subnavi-search" style="text-align:left;"> 
-                <div id="subnavi-search-upper"> 
-                <ul id="subnavi-search-links"> 
-                    <li><a href="{{ env('APP_URL') }}/help" target="_new">Questions fréquentes</a></li> 
-					<li>
-					<form method="post" action="{{ env('APP_URL') }}/logout.php">
-                     <button class="link" id="signout" type="submit"><span>Quitter</span></button>
-                    </form>
-					</li> 
-				</ul> 
-                </div> 
-            </div> 
-            <div id="to-hotel"> 
-					   <a href="client.php" class="new-button green-button" target="5582b925d39a3b57fc3e178ad726bd2798015099" onclick="HabboClient.openOrFocus(this); return false;"><b>@lang('enterin') {{ env('APP_NAME') }}</b><i></i></a> 
-						
-						</div>      					
-        </div>		{{ $config->checkMaintenance }}
 @include('layouts.header')
-        <div id="habbos-online"><div class="rounded"><span style="color:#000;">{{ $config->users_online }}<br/>@lang('online')</span></div></div>
-        
-	</div>
-</div>
-<div id="content-container">
-	@include('layouts.subnav')
 <!--Ne pas supprimer se input -->
 <script>
 function get(){

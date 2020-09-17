@@ -24,7 +24,7 @@ Route::middleware(['auth', 'maintenance', 'guest'])->group(function () {
     Route::get('/', 'IndexController@show')->name('index')->withoutMiddleware('auth');
     Route::get('/?error=invalidcreds', 'IndexController@show')->name('idxinvalid')->withoutMiddleware('auth');
     
-    Route::get('/me', 'MeController@show')->name('me')->withoutMiddleware('guest');
+    Route::get('/me', 'Me\MeController@show')->name('me')->withoutMiddleware('guest');
 });
 
 Route::get('/maintenance', function() {
