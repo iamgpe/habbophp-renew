@@ -15,3 +15,4 @@ pour leur aide ! :)
 ## Contact
 Pour me contacter : [Habbo-Dev](https://habbo-dev.fr/membre/6595-notaryz/)
                     Discord : nttZx#0013
+                    [Serveur Discord communautaire](https://discord.gg/y6GjGy8)
