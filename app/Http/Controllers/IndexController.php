@@ -23,13 +23,13 @@ class IndexController extends Controller {
 		$config = ConfigController::getConfig();
 		if(Auth::attempt($credentials)){
 			if($config->checkMaintenance != true){
-			return redirect()->route('me');
+			return redirect()->route('me.me');
 			} else {
 				
 				if($user->rank < 3){
 					return redirect()->route('maintenanceinvalid');
 				} else {
-					return redirect()->route('me');
+					return redirect()->route('me.me');
 				}
 			}
 		} else {

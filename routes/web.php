@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\ConfigController;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,12 @@ Route::middleware(['auth', 'maintenance', 'guest'])->group(function () {
     Route::get('/', 'IndexController@show')->name('index')->withoutMiddleware('auth');
     Route::get('/?error=invalidcreds', 'IndexController@show')->name('idxinvalid')->withoutMiddleware('auth');
     
-    Route::get('/me', 'Me\MeController@show')->name('me')->withoutMiddleware('guest');
+});
+
+Route::namespace('Me')->name('me.')->middleware(['auth', 'maintenance'])->group(function () {
+    Route::get('/me', 'MeController@show')->name('me');
+    Route::get('/profile', 'ProfileController@show')->name('profile');
+    Route::post('/profile', 'ProfileController@change')->name('profilepost');
 });
 
 Route::get('/maintenance', function() {
