@@ -62,11 +62,6 @@
 
 
     </div>
-    <script type="text/javascript">
-        document.observe("dom:loaded", function () {
-            PromoSlideShow.init();
-        });
-    </script>
 
     <div id="column1" class="column" style="display:none">
 

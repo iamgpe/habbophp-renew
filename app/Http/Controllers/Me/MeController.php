@@ -10,7 +10,7 @@ class MeController extends Controller {
 
 	public function show()
     {
-        $news = News::all();
+        $news = News::query()->orderBy('date', 'desc')->take(5)->get();
 
         return view('me', ['news' => $news]);
     }
