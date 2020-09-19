@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>{{ env('APP_NAME') }}: Crée ton avatar, décore ton appart, chatte et fais-toi plein d'amis.</title>
-	
+
 
 <script type="text/javascript">
 var andSoItBegins = (new Date()).getTime();
@@ -21,7 +21,7 @@ var andSoItBegins = (new Date()).getTime();
 <style type="text/css">
         body {
              background-color: #000000;
-            
+
         }
         #footer .footer-links   { color: #666666; }
         #footer .footer-links a { color: #ffffff; }
@@ -133,33 +133,33 @@ HabboView.add( function() {
 
 
     <form id="loginformitem" name="loginformitem" action="" method="post">
-	
+
 	<!-- {if isset($error_login_pseudo)}
     <div id="loginerrorfieldwrapper">
-   
+
            		 <div id="loginerrorfield">
                 	<div>@lang('error_login_pseudo')</div>
             	</div>
         	</div>
     {elseif isset($error_login_password)}
      <div id="loginerrorfieldwrapper">
-   
+
            		 <div id="loginerrorfield">
                 	<div>@lang('error_login_password')</div>
             	</div>
         	</div>
     {elseif isset($error_login_wrong)} -->
-    
+
 	@php if(isset($_GET['error']) == "invalidcreds") { @endphp
      <div id="loginerrorfieldwrapper">
-   
+
            		 <div id="loginerrorfield">
                     <div>@lang('error_login_wrong')</div>
-                    
+
             	</div>
         	</div>
 	@php } @endphp
-	
+
     <!-- {elseif isset($error_ban)}
     	 <div id="loginerrorfieldwrapper">
            		 <div id="loginerrorfield">
@@ -168,10 +168,10 @@ HabboView.add( function() {
         	</div>
 	{/if}
 	-->
-	
+
 	@if(env('APP_ENV') == "local")
 	    <div id="loginerrorfieldwrapper">
-   
+
            		 <div id="loginerrorfield">
                 	<div>Le CMS est actuellement en développement, vous pouvez rencontrer des problèmes.</div>
             	</div>
@@ -186,13 +186,13 @@ HabboView.add( function() {
             <div id="habbo-logo"></div>
 
             <div id="login-form">
-		
+
 
                 <div id="login-form-email">
                     <label for="login-username"
                            class="login-text">@lang('username') Ou Mail</label>
                     <input tabindex="3" type="text" id="login-username" class="login-field" value="{if isset($smarty.post.username)}{$smarty.post.username}{/if}" name="username"                          maxlength="48"/>
-                    
+
     <input tabindex="6" type="checkbox" name="login_remember_me" id="login-remember-me"
                            value="true"/>
                     <label for="login-remember-me">@lang('keep_session_alive')</label>
@@ -216,11 +216,11 @@ HabboView.add( function() {
                         <a href="#" id="forgot-password"><span>@lang('password_forgotten')</span></a>
                     </div>
 					@csrf
-					
+
                 </div>
                <div id="login-form-submit">
                     <input type="submit" value="Entrer" class="login-top-button" id="login-submit-button" style="margin-top: -10000px; margin-right: -10000px; margin-bottom: -10000px; margin-left: -10000px; position: absolute; ">
-                    
+
                     <a href="#" tabindex="5" onclick="document.forms['loginformitem'].submit();" id="login-submit-new-button" style="display: block; "><span>@lang('entrer')</span></a>
                 </div>
 
@@ -238,7 +238,7 @@ HabboView.add( function() {
 
     };
     window.assistedLogin = function(FBobject, optresponse) {
-        
+
         Cookie.erase("fbsr_{/literal}{$config->fb_appid}{literal}");
         FB.init({appId: '{/literal}{$config->fb_appid}{literal}', status: true, cookie: true, xfbml: true, oauth: true});
 
@@ -246,7 +246,7 @@ HabboView.add( function() {
         defaultAction = function(response) {
 
             if (response.authResponse) {
-                fbConnectUrl = "register.php?page=4";
+                fbConnectUrl = "register?page=4";
 	            window.location.replace(fbConnectUrl);
             }
         };
@@ -329,9 +329,9 @@ HabboView.add( function() {
 <div id="fp-container">
     <div id="content">
     <div id="column1" class="column">
-			     		
-				<div class="habblet-container ">		
-	
+
+				<div class="habblet-container ">
+
 						<div style="width: 890px; margin: 0 auto">
         <div id="tagline">{{ $config->welcome_message }}</div>
 </div>
@@ -343,24 +343,24 @@ HabboView.add( function() {
         <div id="join-now-button-wrapper-fb">
             <div class="join-now-alternative">&nbsp;</div>
             <div class="join-now-button">
-                <a class="join-now-link" href="#" onclick="assistedLogin(FB); return false;"> 
+                <a class="join-now-link" href="#" onclick="assistedLogin(FB); return false;">
                     <span class="join-now-text-big">{{ env('APP_NAME')}}</span>
                     <span class="join-now-text-small">{#with#}<span class="fbword">Facebook</span></span>
                 </a>
                 <span class="close"></span>
             </div>
             <div class="join-now-alternative">
-                <a id="register-link-fb" href="{{ env('APP_URL')}}/register.php" onclick="startRegistration(this); return false;">
+                <a id="register-link-fb" href="{{ env('APP_URL')}}/register" onclick="startRegistration(this); return false;">
                 {#login_or_create_account#}
                 </a>
             </div>
         </div>
         <div id="join-now-button-wrapper">
             <div class="join-now-alternative">
-                <a href="{{ env('APP_URL')}}/register.php" class="newusers" onclick="startRegistration(this); return false;"><b>@lang('new_user')</b><span style="color: #8f8f8f;">@lang('clic_here')</span></a>
+                <a href="{{ env('APP_URL')}}/register" class="newusers" onclick="startRegistration(this); return false;"><b>@lang('new_user')</b><span style="color: #8f8f8f;">@lang('clic_here')</span></a>
             </div>
             <div class="join-now-button">
-                <a class="join-now-link" id="register-link" href="{{ env('APP_URL')}}/register.php" onclick="startRegistration(this); return false;"> 
+                <a class="join-now-link" id="register-link" href="{{ env('APP_URL')}}/register" onclick="startRegistration(this); return false;">
                     <span class="join-now-text-big">@lang('register_you')</span>
                     <span class="join-now-text-small">@lang('it_is_free')</span>
                 </a>
@@ -377,7 +377,7 @@ HabboView.add( function() {
         function startRegistration(elem) {
             targetUrl = elem.href;
             if (typeof targetUrl == "undefined") {
-                targetUrl = "{{ env('APP_URL')}}/register.php";
+                targetUrl = "{{ env('APP_URL')}}/register";
             }
             window.location.href = targetUrl;
         }
@@ -388,7 +388,7 @@ HabboView.add( function() {
         <i></i>
     </div>
 
-    <a href="{{ env('APP_URL')}}/register.php" id="frontpage-image" style="background-image: url('{{ env('APP_URL')}}/web-gallery/landing_generic_1203xx_1.png')" onclick="startRegistration(this); return false;"></a>
+    <a href="{{ env('APP_URL')}}/register" id="frontpage-image" style="background-image: url('{{ env('APP_URL')}}/web-gallery/landing_generic_1203xx_1.png')" onclick="startRegistration(this); return false;"></a>
 
 </div>
 
@@ -399,12 +399,12 @@ HabboView.add( function() {
     });
 </script>
 
-						
-							
-					
+
+
+
 				</div>
 <script type="text/javascript">if (!$(document.body).hasClassName('process-template')) { Rounder.init(); }</script>
-			 
+
 
 </div>
 <!--[if lt IE 7]>
@@ -435,17 +435,17 @@ if (typeof HabboView != "undefined") {
 
 <script type="text/javascript">
     RPXNOW.overlay = false;
-    RPXNOW.language_preference = 'fr'; 
-    
+    RPXNOW.language_preference = 'fr';
+
     var flags =  'show_provider_list';
     RPXNOW.flags = flags.split(',');
-    
+
 </script>
 
 
 
 
-        
+
 
 </body>
 </html>

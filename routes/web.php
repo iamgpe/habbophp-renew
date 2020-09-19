@@ -24,7 +24,7 @@ Route::middleware(['auth', 'maintenance', 'guest'])->group(function () {
     Route::post('/', 'IndexController@login')->name('login')->withoutMiddleware('auth');
     Route::get('/', 'IndexController@show')->name('index')->withoutMiddleware('auth');
     Route::get('/?error=invalidcreds', 'IndexController@show')->name('idxinvalid')->withoutMiddleware('auth');
-    
+
 });
 
 Route::namespace('Me')->name('me.')->middleware(['auth', 'maintenance'])->group(function () {
@@ -32,6 +32,8 @@ Route::namespace('Me')->name('me.')->middleware(['auth', 'maintenance'])->group(
     Route::get('/profile', 'ProfileController@show')->name('profile');
     Route::post('/profile', 'ProfileController@change')->name('profilepost');
 });
+
+Route::get('/register', 'RegisterController@show')->name('register');
 
 Route::get('/maintenance', function() {
 	return view('maintenance', $config);
