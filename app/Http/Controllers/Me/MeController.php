@@ -12,6 +12,6 @@ class MeController extends Controller {
     {
         $news = News::all();
 
-        return view('me', ["news" => $news]);
+        return view('me', ['news' => $news]);
     }
 }
