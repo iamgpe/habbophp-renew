@@ -20,7 +20,7 @@ var andSoItBegins = (new Date()).getTime();
 <style type="text/css">
         body {
              background-color: #000000;
-            
+
         }
         #footer .footer-links   { color: #666666; }
         #footer .footer-links a { color: #ffffff; }
@@ -134,22 +134,22 @@ HabboView.add( function() {
     <form id="loginformitem" name="loginformitem" action="" method="post">
 	{if isset($error_login_pseudo)}
     <div id="loginerrorfieldwrapper">
-   
+
            		 <div id="loginerrorfield">
                 	<div>{#error_login_pseudo#}</div>
             	</div>
         	</div>
     {elseif isset($error_login_password)}
      <div id="loginerrorfieldwrapper">
-   
+
            		 <div id="loginerrorfield">
                 	<div>{#error_login_password#}</div>
             	</div>
         	</div>
     {elseif isset($error_login_wrong)}
-    
+
      <div id="loginerrorfieldwrapper">
-   
+
            		 <div id="loginerrorfield">
                 	<div>{#error_login_wrong#}</div>
             	</div>
@@ -161,10 +161,10 @@ HabboView.add( function() {
             	</div>
         	</div>
 	{/if}
-	
+
 	{if isset($error_get)}
     <div id="loginerrorfieldwrapper">
-   
+
            		 <div id="loginerrorfield">
                 	<div>{$error_get}</div>
             	</div>
@@ -180,13 +180,13 @@ HabboView.add( function() {
             <div id="habbo-logo"></div>
 
             <div id="login-form">
-		
+
 
                 <div id="login-form-email">
                     <label for="login-username"
                            class="login-text">{#Username#} Ou Mail</label>
                     <input tabindex="3" type="text" id="login-username" class="login-field" value="{if isset($smarty.post.username)}{$smarty.post.username}{/if}" name="username"                          maxlength="48"/>
-                    
+
     <input tabindex="6" type="checkbox" name="login_remember_me" id="login-remember-me"
                            value="true"/>
                     <label for="login-remember-me">Garder ma session activé</label>
@@ -213,7 +213,7 @@ HabboView.add( function() {
 				<input type="hidden" name="token" id="token" value="{$token}"/>
                <div id="login-form-submit">
                     <input type="submit" value="Entrer" class="login-top-button" id="login-submit-button" style="margin-top: -10000px; margin-right: -10000px; margin-bottom: -10000px; margin-left: -10000px; position: absolute; ">
-                    
+
                     <a href="#" tabindex="5" onclick="document.forms['loginformitem'].submit();" id="login-submit-new-button" style="display: block; "><span>{#Enter#}</span></a>
                 </div>
 
@@ -231,7 +231,7 @@ HabboView.add( function() {
 
     };
     window.assistedLogin = function(FBobject, optresponse) {
-        
+
         Cookie.erase("fbsr_{/literal}{$config->fb_appid}{literal}");
         FB.init({appId: '{/literal}{$config->fb_appid}{literal}', status: true, cookie: true, xfbml: true, oauth: true});
 
@@ -322,9 +322,9 @@ HabboView.add( function() {
 <div id="fp-container">
     <div id="content">
     <div id="column1" class="column">
-			     		
-				<div class="habblet-container ">		
-	
+
+				<div class="habblet-container ">
+
 						<div style="width: 890px; margin: 0 auto">
         <div id="tagline">{$config->welcome_message}</div>
 </div>
@@ -336,7 +336,7 @@ HabboView.add( function() {
         <div id="join-now-button-wrapper-fb">
             <div class="join-now-alternative">&nbsp;</div>
             <div class="join-now-button">
-                <a class="join-now-link" href="#" onclick="assistedLogin(FB); return false;"> 
+                <a class="join-now-link" href="#" onclick="assistedLogin(FB); return false;">
                     <span class="join-now-text-big">{$config->name}</span>
                     <span class="join-now-text-small">{#with#}<span class="fbword">Facebook</span></span>
                 </a>
@@ -353,7 +353,7 @@ HabboView.add( function() {
                 <a href="{$config->url_site}/register.php" class="newusers" onclick="startRegistration(this); return false;"><b>{#NewUser#}</b><span style="color: #8f8f8f;">{#clic_here#}</span></a>
             </div>
             <div class="join-now-button">
-                <a class="join-now-link" id="register-link" href="{$config->url_site}/register.php" onclick="startRegistration(this); return false;"> 
+                <a class="join-now-link" id="register-link" href="{$config->url_site}/register.php" onclick="startRegistration(this); return false;">
                     <span class="join-now-text-big">{#register_you#}</span>
                     <span class="join-now-text-small">{#it_is_free#}</span>
                 </a>
@@ -368,6 +368,7 @@ HabboView.add( function() {
     </div>
     <script type="text/javascript">
         function startRegistration(elem) {
+            console.log("SAUCISSE");
             targetUrl = elem.href;
             if (typeof targetUrl == "undefined") {
                 targetUrl = "{$config->url_site}/register.php";
@@ -392,12 +393,12 @@ HabboView.add( function() {
     });
 </script>
 
-						
-							
-					
+
+
+
 				</div>
 <script type="text/javascript">if (!$(document.body).hasClassName('process-template')) { Rounder.init(); }</script>
-			 
+
 
 </div>
 <!--[if lt IE 7]>
@@ -428,17 +429,17 @@ if (typeof HabboView != "undefined") {
 
 <script type="text/javascript">
     RPXNOW.overlay = false;
-    RPXNOW.language_preference = 'fr'; 
-    
+    RPXNOW.language_preference = 'fr';
+
     var flags =  'show_provider_list';
     RPXNOW.flags = flags.split(',');
-    
+
 </script>
 
 
 
 
-        
+
 
 </body>
 </html>
