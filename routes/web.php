@@ -24,7 +24,6 @@ Route::middleware(['auth', 'maintenance', 'guest'])->group(function () {
     Route::post('/', 'IndexController@login')->name('login')->withoutMiddleware('auth');
     Route::get('/', 'IndexController@show')->name('index')->withoutMiddleware('auth');
     Route::get('/?error=invalidcreds', 'IndexController@show')->name('idxinvalid')->withoutMiddleware('auth');
-
 });
 
 Route::namespace('Me')->name('me.')->middleware(['auth', 'maintenance'])->group(function () {
